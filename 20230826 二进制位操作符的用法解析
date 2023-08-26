@@ -1,0 +1,33 @@
+& 按位与 --都是真的才为真
+| 按位或 --有一个是真的就行
+^ 按位异或 --对应的二进制位相同，则为0；对应的二进制位不同，则为1。
+
+举例：(按位与)
+#include <stdio.h>
+int main()
+{
+int a=3;
+int b=5;
+int c=a&b
+return 0;
+}该例子输出为1
+
+举例：(按位或)
+#include <stdio.h>
+int main()
+{
+int a=3;
+int b=5;
+int c=a|b
+return 0;
+}该例子输出为7
+
+举例：(按位异或)
+#include <stdio.h>
+int main()
+{
+int a=3;
+int b=5;
+int c=a^b
+return 0;
+}该例子输出为6
