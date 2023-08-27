@@ -1,5 +1,5 @@
 #define  _CRT_SECURE_NO_WARNINGS 1
-①static能够增大局部变量的生命周期
+①static修饰局部变量时，能够增大局部变量的生命周期
 对照；
 #include<stdio.h>
 void test()
@@ -45,3 +45,5 @@ int main()
         a=4
         a=5
         a=6
+②static修饰全局变量时，能够改变全局变量的作用域，时期只能在自己的源文件内部使用
+③static修饰函数时，改变了函数的链接属性，将函数的外部链接属性变成内部链接属性
