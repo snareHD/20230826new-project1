@@ -1,0 +1,2 @@
+typedef--类型定义--类型重定义
+例：typedef unsigned int u_int  //将unsigned int 重新定义为u_int  (其中unsigned为无符号位的意思)
