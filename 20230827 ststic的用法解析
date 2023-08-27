@@ -1,0 +1,47 @@
+#define  _CRT_SECURE_NO_WARNINGS 1
+①static能够增大局部变量的生命周期
+对照；
+#include<stdio.h>
+void test()
+{
+	int a=1;
+	a++;
+	printf("a=%d\n", a);
+}
+int main()
+{
+	int t = 0;
+	while (t < 5)
+	{
+		test();
+		t++;
+	}
+	return 0;
+}//输出为a=2 
+        a=2
+        a=2 
+        a=2
+        a=2
+
+实际应用：
+#include<stdio.h>
+void test()
+{
+	static int a=1;
+	a++;
+	printf("a=%d\n", a);
+}
+int main()
+{
+	int t = 0;
+	while (t < 5)
+	{
+		test();
+		t++;
+	}
+	return 0;
+}//输出为a=2 
+        a=3
+        a=4
+        a=5
+        a=6
