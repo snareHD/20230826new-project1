@@ -1,0 +1,62 @@
+struct结构体的创建(带指针）
+例一：
+#define  _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+struct book       --创建+对象名称
+{
+	char name[20];    --对象特点1类型
+	short price;      --对象特点2类型
+};
+int main()
+{
+	struct book b1 = { "鸡你太美",50 };
+	printf("书名:%s\n", b1.name);
+	printf("价格:%d\n", b1.price);
+	strcpy(b1.name, "川建国");
+	printf("书名:%s\n", b1.name);
+
+	return 0;
+}
+
+例二： 
+#define  _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+struct book
+{
+	char name[20];
+	short price;
+};
+int main()
+{
+	struct book b1 = { "鸡你太美",50 };
+	struct book* pb = &b1;
+	printf("书名:%s\n", (*pb).name);
+	printf("价格:%d\n", (*pb).price);
+	strcpy(b1.name, "川建国");
+	printf("书名:%s\n", b1.name);
+
+	return 0;
+}
+
+例三：
+#define  _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+struct book
+{
+	char name[20];
+	short price;
+};
+int main()
+{
+	struct book b1 = { "鸡你太美",50 };
+	struct book* pb = &b1;
+	printf("书名:%s\n", pb->name);   --这里pb指向&b1
+	printf("价格:%d\n", pb->price);
+	strcpy(b1.name, "川建国");
+	printf("书名:%s\n", b1.name);
+
+	return 0;
+}
