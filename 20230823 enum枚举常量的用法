@@ -1,4 +1,4 @@
-enum--枚举常量的用法
+enum--枚举常量的用法 
 
 #include<stdio.h>
 enum color
