@@ -5,7 +5,7 @@
 void test()
 {
 	int a=1;
-	a++;
+	a++; 
 	printf("a=%d\n", a);
 }
 int main()
