@@ -1,0 +1,42 @@
+//第一种方法：临时变量存储法--使用临时变量
+#include<stdio.h>
+int main()
+{
+	int a = 3;
+	int b = 5;
+	int z = 0;   //临时变量
+	printf("a=%d,b=%d\n", a, b);
+	z = a;
+	a = b;
+	b = z;
+	printf("a=%d,b=%d\n", a, b);
+	return 0;
+}
+
+//第二种方法：加减法--不使用临时变量     第二种方法的缺点是如果a和b之和大于目标类型最大值，会导致栈溢出
+#include<stdio.h>
+int main()
+{
+	int a = 3;
+	int b = 5;
+	printf("a=%d,b=%d\n", a, b);
+	a = a + b;
+	b = a - b;;
+	a = a - b;
+	printf("a=%d,b=%d\n", a, b);
+	return 0;
+}
+
+//第三种方法：按位异或法--不使用临时变量     该方法不会导致栈溢出
+#include<stdio.h>
+int main()
+{
+	int a = 3;
+	int b = 5;
+	printf("a=%d,b=%d\n", a, b);
+	a = a ^ b;
+	b = a ^ b;
+	a = a ^ b;
+	printf("a=%d,b=%d\n", a, b);
+	return 0;
+}
