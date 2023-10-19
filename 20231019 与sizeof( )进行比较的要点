@@ -1,0 +1,16 @@
+#include<stdio.h>
+int a; //全局变量未初始化，默认为0
+int main()
+{
+	a--;
+	if (a > sizeof(a))  //sizeof 计算的是变量/类型所占内存的大小，均>=0, 所以sizeof返回的值均为无符号位，这里a == -1（有符号位）会强制转换成无符号位与size(a)进行比较
+	{
+		printf(">\n");
+	}
+	else
+	{
+		printf("<\n");
+
+	}
+	return 0;
+}
