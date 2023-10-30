@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<assert.h>     //assert的头文件
+
+char* my_strcpy(char* r1, const char* r2)    //这里用const的原因是表达式左侧不能为常属性
+{
+	char* ret = r1;
+	assert(r1 != NULL);//断言  --该表达式为真什么也不发生，该表达式为假直接报错
+	assert(r2 != NULL);
+	while (*r1++ = *r2++)  //把r2指向的字符串拷贝到r1指向的空间里，包含'\0'
+	{
+		;
+	}
+	return ret;
+}
+int main()
+{
+	char arr1[] = "***************";
+	char arr2[] = "bit";
+	char* jk=my_strcpy(arr1, arr2);
+	printf("%s\n", jk);
+	return 0;
+}
