@@ -1,0 +1,31 @@
+①const在int*左侧
+#include<stdio.h>
+int main()
+{
+	const int num = 10;
+	int n = 100;
+	const int* p = &num;
+	//此时const修饰的是*p（num）,也就是说不能改变*p（num）的值，但此时可以更改p的值
+	//*p = 0;   --error
+	p = &n;
+	printf("%d", *p);
+	return 0;
+
+}
+
+
+
+②const在int*右侧
+#include<stdio.h>
+int main()
+{
+	const int num = 10;
+	int n = 100;
+	int* const p = &num;
+	//此时const修饰的是 p（&num）,也就是说不能改变 p（&num）的值，但此时可以更改*p的值
+	*p = 0;
+	//p = &n;    --error
+	printf("%d", *p);
+	return 0;
+
+}
